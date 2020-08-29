@@ -7,7 +7,7 @@
         <button mat-raised-button color="primary">
             <a class="router-link" [routerLink]="['/recipe', recipe.id]">DETAILS</a>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="favorite()" [color]="isFavorite ? 'warn' : null">
             <mat-icon>favorite</mat-icon>
         </button>
     </mat-card-actions>

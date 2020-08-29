@@ -21,7 +21,7 @@
     <p *ngIf="recipes === undefined; else firstElseBlock">Loading...</p>
     <ng-template #firstElseBlock>
         <p *ngIf="recipes.length === 0; else elseBlock">
-            Nothing matches your search :(
+            No recipes match your search 😓
         </p>
         <ng-template #elseBlock>
             <app-recipe-card *ngFor="let recipe of recipes" [recipe]="recipe" class="recipe"></app-recipe-card>

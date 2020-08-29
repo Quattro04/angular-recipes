@@ -1,10 +1,13 @@
 .header .router-link {
     text-decoration: none;
     color: rgb(211, 211, 211);
-    margin-left: 20px;
-    padding-left: 20px;
     display: flex;
     align-items: center;
+}
+
+.header .router-link.favs {
+    margin-left: 20px;
+    padding-left: 20px;
     border-left: 1px solid rgb(211, 211, 211);
 }
 

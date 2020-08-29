@@ -19,13 +19,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecipeCardComponent } from './components/recipe-card/recipe-card.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeComponent,
     HomeComponent,
-    RecipeCardComponent
+    RecipeCardComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

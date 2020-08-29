@@ -1,0 +1,15 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards .recipe {
+    flex: 0 0 200px;
+    margin: 10px;
+}

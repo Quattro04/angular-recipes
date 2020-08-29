@@ -1,0 +1,19 @@
+.user-input {
+    color: white;
+}
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cards .recipe {
+    flex: 0 0 200px;
+    margin: 10px;
+}

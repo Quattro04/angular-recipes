@@ -3,7 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Observable, Subscription } from "rxjs";
 
 import { RecipeService } from "../recipe.service";
-import { Recipe } from "./recipe.model";
+import { Recipe } from "../recipe.model";
 
 @Component({
     selector: 'app-recipe',
@@ -14,10 +14,6 @@ export class RecipeComponent implements OnInit {
 
     public id: string;
     public recipe: Recipe;
-    private query: string;
-    private error: boolean;
-    // private paramSubscription: Subscription;
-    // private recipeSubscription: Subscription;
 
     constructor(
         private route: ActivatedRoute,
@@ -31,15 +27,12 @@ export class RecipeComponent implements OnInit {
         })
     }
 
-    getRecipeInfo() {    
-        this.query = `recipes/${this.id}/information`
-    
-        this.recipeService.get(this.query)
+    private getRecipeInfo() {    
+        this.recipeService.get(`recipes/${this.id}/information`, '')
             .subscribe((response: Recipe) => {
                 this.recipe = response
             }, (error: any) => {
                 console.log("Error getting recipe info: ", error);
-                this.error = true;
             });
     }
 }

@@ -1,0 +1,30 @@
+<form (ngSubmit)="Search()">
+    <mat-form-field>
+        <input 
+            matInput
+            class="user-input"
+            type="text"
+            placeholder="Search recipes"
+            aria-label="Number"
+            [formControl]="myControl"
+            [matAutocomplete]="auto"
+            (ngModelChange)="inputChange($event)">
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions" [value]="option">
+                {{option}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+</form>
+
+<div class="cards">
+    <p *ngIf="recipes === undefined; else firstElseBlock">Loading...</p>
+    <ng-template #firstElseBlock>
+        <p *ngIf="recipes.length === 0; else elseBlock">
+            Nothing matches your search :(
+        </p>
+        <ng-template #elseBlock>
+            <app-recipe-card *ngFor="let recipe of recipes" [recipe]="recipe" class="recipe"></app-recipe-card>
+        </ng-template>
+    </ng-template>
+</div>

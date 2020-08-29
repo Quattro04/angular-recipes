@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from "./app.component";
 import { RecipeComponent } from "./recipe/recipe.component";
+import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "", pathMatch: "full", component: AppComponent },
+    { path: "", redirectTo: "", pathMatch: "full", component: HomeComponent },
     { path: "recipe/:id", component: RecipeComponent }
 ];
 

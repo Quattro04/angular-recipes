@@ -1,0 +1,12 @@
+<mat-card class="card">
+    <mat-card-header class="header">
+        <mat-card-title class="title">{{recipe.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{recipe.image}}">
+    <mat-card-actions class="actions">
+        <button mat-raised-button color="primary">DETAILS</button>
+        <button mat-icon-button color="warn">
+            <mat-icon>favorite</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>

@@ -40,3 +40,14 @@ export interface Recipe {
     originalId?: any;
     spoonacularSourceUrl: string;
 }
+
+export interface RecipeShort {
+    id: number;
+    title: string;
+    image: string;
+    imageType: string;
+}
+
+export interface SearchResults {
+    results: RecipeShort[];
+}

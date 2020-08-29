@@ -4,8 +4,10 @@
     </mat-card-header>
     <img mat-card-image src="{{recipe.image}}">
     <mat-card-actions class="actions">
-        <button mat-raised-button color="primary">DETAILS</button>
-        <button mat-icon-button color="warn">
+        <button mat-raised-button color="primary">
+            <a class="router-link" [routerLink]="['/recipe', recipe.id]">DETAILS</a>
+        </button>
+        <button mat-icon-button>
             <mat-icon>favorite</mat-icon>
         </button>
     </mat-card-actions>

@@ -1,9 +1,17 @@
-<div *ngIf="recipe !== undefined; else elseBlock" class="recipe">
-    <h1 class="title">{{recipe.title}}</h1>
-    <img class="image" src="{{recipe.image}}">
-    <p class="ready-in">Ready in: {{recipe.readyInMinutes}}m</p>
-    <p class="servings">Servings: {{recipe.servings}}</p>
-    <p class="instrucitons">{{recipe.instructions}}</p>
+<div *ngIf="recipe !== undefined && similar !== undefined && similar.length > 0; else elseBlock">
+    <div class="recipe">
+        <div class="info">
+            <h1 class="title">{{recipe.title}}</h1>
+            <p class="ready-in">Ready in: {{recipe.readyInMinutes}}m</p>
+            <p class="servings">Servings: {{recipe.servings}}</p>
+            <p class="instrucitons">{{recipe.instructions}}</p>
+        </div>
+        <img class="image" src="{{recipe.image}}">
+    </div>
+    <h2>Similar recipes</h2>
+    <div class="similar-recipes">
+        <app-recipe-card *ngFor="let simRecipe of similar" [recipe]="simRecipe" class="recipe"></app-recipe-card>
+    </div>
 </div>
 <ng-template #elseBlock>Loading...</ng-template>
 

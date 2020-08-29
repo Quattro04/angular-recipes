@@ -1,0 +1,34 @@
+.recipe {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.recipe .info {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.recipe .image {
+    width: 100%;
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.recipe .title {
+    text-align: center;
+    min-width: 300px;
+}
+
+.similar-recipes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.similar-recipes .recipe {
+    width: 200px;
+    margin: 10px;
+}

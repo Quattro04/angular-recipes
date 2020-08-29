@@ -1,3 +1,13 @@
+.header .router-link {
+    text-decoration: none;
+    color: rgb(211, 211, 211);
+    margin-left: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgb(211, 211, 211);
+}
+
 .main {
     height: calc(100vh - 105px);
     padding: 20px 10%;

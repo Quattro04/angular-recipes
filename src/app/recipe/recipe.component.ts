@@ -4,6 +4,7 @@ import { Observable, Subscription } from "rxjs";
 
 import { RecipeService } from "../recipe.service";
 import { Recipe } from "../recipe.model";
+import { RecipeShort, SearchResults } from "../recipe.model";
 
 @Component({
     selector: 'app-recipe',
@@ -14,6 +15,7 @@ export class RecipeComponent implements OnInit {
 
     public id: string;
     public recipe: Recipe;
+    public similar: RecipeShort[]
 
     constructor(
         private route: ActivatedRoute,
@@ -23,16 +25,25 @@ export class RecipeComponent implements OnInit {
     ngOnInit(): void {
         this.route.paramMap.subscribe(params => {
             this.id = params.get("id");
-            this.getRecipeInfo()
+            this.getRecipe()
         })
     }
 
-    private getRecipeInfo() {    
+    private getRecipe() {
+        // Get recipe info
         this.recipeService.get(`recipes/${this.id}/information`, '')
             .subscribe((response: Recipe) => {
                 this.recipe = response
             }, (error: any) => {
                 console.log("Error getting recipe info: ", error);
+            });
+
+        // Get similar recipes
+        this.recipeService.get(`recipes/${this.id}/similar`, '')
+            .subscribe((response: RecipeShort[]) => {
+                this.similar = response
+            }, (error: any) => {
+                console.log("Error getting similar recipes: ", error);
             });
     }
 }

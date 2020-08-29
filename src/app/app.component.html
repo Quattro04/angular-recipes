@@ -1,5 +1,6 @@
-<mat-toolbar>
+<mat-toolbar class="header">
     <span>Angular Recipes 🥑</span>
+    <a class="router-link" [routerLink]="['/']"><mat-icon>home</mat-icon></a>
 </mat-toolbar>
 <div class="main">
     <router-outlet></router-outlet>

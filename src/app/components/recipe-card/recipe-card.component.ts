@@ -18,6 +18,7 @@ export class RecipeCardComponent implements OnInit {
 
     ngOnInit() {
         let favorites = JSON.parse(localStorage.getItem('favorites'))
+        if (!favorites) return
         if (favorites.includes(JSON.stringify(this.recipe))) this.isFavorite = true
     }
 

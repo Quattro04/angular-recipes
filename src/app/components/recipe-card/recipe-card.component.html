@@ -1,4 +1,4 @@
-<mat-card class="card">
+<mat-card *ngIf="recipe !== undefined" class="card">
     <mat-card-header class="header">
         <mat-card-title class="title">{{recipe.title}}</mat-card-title>
     </mat-card-header>

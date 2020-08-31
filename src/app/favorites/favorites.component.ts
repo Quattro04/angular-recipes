@@ -19,8 +19,10 @@ export class FavoritesComponent implements OnInit {
         this.getFavorites()
     }
 
-    private getFavorites() {
+    public getFavorites() {
         let favorites = JSON.parse(localStorage.getItem('favorites'))
+        console.log('GOT FAVORITES: ', favorites)
+        if (!favorites) favorites = []
         this.recipes = favorites.map(recipe => {
             return JSON.parse(recipe)
         })

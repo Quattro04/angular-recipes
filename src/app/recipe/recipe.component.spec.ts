@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RecipeComponent } from './recipe.component';
+import { AppModule } from '../app.module'
 
 describe('RecipeComponent', () => {
     let component: RecipeComponent;
@@ -8,7 +9,8 @@ describe('RecipeComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-        declarations: [ RecipeComponent ]
+            declarations: [ RecipeComponent ],
+            imports: [ AppModule ]
         })
         .compileComponents();
     }));
@@ -21,9 +23,5 @@ describe('RecipeComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
-    });
-
-    it('should display recipe info', () => {
-        expect(fixture.nativeElement.querySelector('.title')).toBeTruthy
     });
 });

@@ -1,27 +1,11 @@
-# AngularRecipes
+# Angular Recipes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+This is a simple web app made with Angular 10 that displays recipes from fetched from https://spoonacular.com/food-api. It supports searching for recipes, getting single recipe information and adding a recipe to favorites list to be displayed seperately.
 
-## Development server
+I used 3 components, one for each page (home, recipe, favorites) and an extra recipe-card component that represents a recipe. That way I could easily import a recipe card wherever I needed it (home page, favorites page and recipe page under "similar" section).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I also implemented a recipe service, that calls the external API through HttpClient.
 
-## Code scaffolding
+Favorites are stored in localstorage and the logic is implemented on the recipe-card itself. That way every card is responsible for its own data and this provides a simple solution.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+I implemented a few unit test for recipe-card and favorites, for example to check if the localstorage is updated with the correct values when a user adds a recipe to his favorites. I know the number of test as well as what exactly they are testing could be improved a lot, but I am fairly new to testing and I'm looking forward to learn more about it.
